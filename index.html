@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avijit Chowdhury</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Merriweather', 'serif'],
+                    },
+                    colors: {
+                        academic: {
+                            navy: '#0a0f1d', 
+                            blue: '#1e3a8a', 
+                            light: '#f8fafc',
+                            slate: '#334155',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            background-color: #fcfcfc;
+        }
+        .hero-bg {
+            /* Black hole/deep space background */
+            background-image: linear-gradient(to right, rgba(10, 15, 29, 0.95), rgba(10, 15, 29, 0.75)), url('https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=2000&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #1e3a8a;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .section-heading {
+            position: relative;
+            display: inline-block;
+            padding-bottom: 0.5rem;
+            margin-bottom: 2rem;
+        }
+        .section-heading::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 3px;
+            background-color: #1e3a8a;
+        }
+    </style>
+</head>
+<body class="font-sans text-academic-slate antialiased selection:bg-academic-blue selection:text-white">
+
+    <!-- Sticky Navigation -->
+    <nav class="fixed w-full top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0">
+                    <a href="#about" class="font-serif font-bold text-xl tracking-tight text-academic-navy">
+                        Avijit Chowdhury
+                    </a>
+                </div>
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-6 lg:space-x-8">
+                    <a href="#about" class="nav-link text-sm font-medium text-gray-700 hover:text-academic-blue transition-colors">About</a>
+                    <a href="#research" class="nav-link text-sm font-medium text-gray-700 hover:text-academic-blue transition-colors">Research</a>\n                    <a href="research.html" class="nav-link text-sm font-medium text-gray-700 hover:text-academic-blue transition-colors">Research Results</a>
+                    <a href="#experience" class="nav-link text-sm font-medium text-gray-700 hover:text-academic-blue transition-colors">Experience</a>
+                    <a href="#teaching" class="nav-link text-sm font-medium text-gray-700 hover:text-academic-blue transition-colors">Teaching</a>
+                    <a href="#achievements" class="nav-link text-sm font-medium text-gray-700 hover:text-academic-blue transition-colors">Achievements</a>
+                    <a href="#publications" class="nav-link text-sm font-medium text-gray-700 hover:text-academic-blue transition-colors">Publications</a>
+                    <a href="#cv" class="nav-link text-sm font-medium text-gray-700 hover:text-academic-blue transition-colors">CV</a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-academic-blue focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-lg absolute w-full">
+            <div class="px-4 pt-2 pb-4 space-y-2">
+                <a href="#about" class="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-academic-blue rounded-md">About</a>
+                <a href="#research" class="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-academic-blue rounded-md">Research</a>\n                <a href="research.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-academic-blue rounded-md">Research Results</a>
+                <a href="#experience" class="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-academic-blue rounded-md">Experience</a>
+                <a href="#teaching" class="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-academic-blue rounded-md">Teaching</a>
+                <a href="#achievements" class="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-academic-blue rounded-md">Achievements</a>
+                <a href="#publications" class="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-academic-blue rounded-md">Publications</a>
+                <a href="#cv" class="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-academic-blue rounded-md">CV</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero / About Section -->
+    <section id="about" class="pt-16">
+        <div class="hero-bg text-white min-h-[calc(100vh-4rem)] flex items-center py-16 lg:py-20">
+            <div class="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 flex flex-col md:flex-row items-center gap-10 lg:gap-16">
+                <!-- Bio Text -->
+                <div class="flex-1 text-center md:text-left order-2 md:order-1">
+
+
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-4 tracking-tight text-white drop-shadow-lg">
+                        Avijit Chowdhury
+                    </h1>
+                    <p class="text-base md:text-lg text-gray-300 leading-relaxed font-light mb-8 max-w-2xl drop-shadow-sm">
+                        I am a Postdoctoral Fellow at the Indian Institute of Astrophysics (IIA), Bengaluru. 
+                        My research investigates how dark matter, accretion flows, plasma, and other astrophysical environments modify black hole dynamics and observable signatures. I develop analytical and computational models of perturbations, accretion, tidal response, and ringdown, aiming to connect strong-field gravity theory with multi-messenger observations.
+                    </p>
+                    <div class="flex flex-wrap justify-center md:justify-start gap-4">
+                        <a href="#publications" class="px-6 py-3 bg-white text-academic-navy font-medium rounded-sm shadow-lg hover:bg-gray-100 transition-colors duration-200">
+                            View Publications
+                        </a>
+                        <a href="mailto:chowdhury.avijit.001@gmail.com" class="px-6 py-3 border border-white/50 text-white font-medium rounded-sm hover:bg-white/10 transition-colors duration-200 backdrop-blur-sm">
+                            <i class="fas fa-envelope mr-2"></i>Contact Me
+                        </a>
+                    </div>
+
+                    <div class="mt-5 flex flex-wrap justify-center md:justify-start items-center gap-x-5 gap-y-3 text-sm text-gray-300">
+                        <a href="https://scholar.google.com/citations?user=su9H5YQAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer" title="Google Scholar" class="inline-flex items-center gap-2 hover:text-white transition-colors">
+                            <i class="fas fa-graduation-cap" aria-hidden="true"></i><span>Google Scholar</span>
+                        </a>
+                        <a href="https://orcid.org/0000-0002-7235-5076" target="_blank" rel="noopener noreferrer" title="ORCID" class="inline-flex items-center gap-2 hover:text-white transition-colors">
+                            <i class="fab fa-orcid" aria-hidden="true"></i><span>ORCID</span>
+                        </a>
+                        <a href="https://inspirehep.net/authors/1826966?ui-citation-summary=true" target="_blank" rel="noopener noreferrer" title="INSPIRE-HEP" class="inline-flex items-center gap-2 hover:text-white transition-colors">
+                            <i class="fas fa-atom" aria-hidden="true"></i><span>INSPIRE-HEP</span>
+                        </a>
+                    </div>
+                
+                
+            </div>
+
+                <!-- Profile Image: right side on desktop, above the text on mobile -->
+                <div class="flex flex-col items-center flex-shrink-0 w-full md:w-auto mb-6 md:mb-0 order-1 md:order-2">
+                    <div class="w-56 h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 relative">
+                        <div class="absolute inset-0 bg-blue-500 rounded-full blur-xl opacity-20"></div>
+                        <img src="img.jpg" alt="Avijit Chowdhury" class="relative block w-full h-full object-cover object-top rounded-full shadow-2xl border-4 border-white/20 hover:border-white/40 transition-colors duration-300">
+                    </div>
+                </div>
+
+        </div>
+    </section>
+
+    <!-- Main Content Container -->
+    <main class="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 py-20 space-y-24">
+
+        <!-- Research Interests -->
+        <section id="research" class="scroll-mt-24">
+            <h3 class="text-3xl font-serif font-bold text-academic-navy section-heading">Research Interests</h3>
+            <p class="text-gray-600 leading-relaxed max-w-4xl mt-2 mb-8">
+                My research uses compact objects as laboratories for strong-field gravity. I investigate how dark matter, accretion flows and plasma shape gravitational-wave and electromagnetic signals, and how these environmental effects can be distinguished from departures from General Relativity.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                <article class="bg-white p-7 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                    <div class="w-14 h-14 mb-4 rounded-lg overflow-hidden bg-gray-50 border border-gray-100">
+                        <img src="ringdown-icon.jpg" alt="Black hole ringdown" class="w-full h-full object-cover" loading="lazy">
+                    </div>
+                    <h4 class="text-xl font-serif font-semibold text-academic-navy mb-3">Black Hole Ringdown and Dark Matter</h4>
+                    <p class="text-gray-600 leading-relaxed text-sm">
+                        I study how dark matter halos modify quasinormal modes, light-ring properties and late-time tails. I also combine ringdown spectra with tidal Love numbers to break degeneracies between halo profiles that appear similar in ringdown alone.
+                    </p>
+                </article>
+
+                <article class="bg-white p-7 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                    <div class="w-14 h-14 mb-4 rounded-lg overflow-hidden bg-gray-50 border border-gray-100">
+                        <img src="accretion-icon.jpg" alt="Relativistic accretion flow" class="w-full h-full object-cover" loading="lazy">
+                    </div>
+                    <h4 class="text-xl font-serif font-semibold text-academic-navy mb-3">Relativistic Accretion and Dark Matter</h4>
+                    <p class="text-gray-600 leading-relaxed text-sm">
+                        I investigate how dark matter halos alter transonic accretion onto supermassive black holes. My work shows that halo properties affect the critical-point structure and can enhance disc luminosity, particularly for compact, massive halos.
+                    </p>
+                </article>
+
+                <article class="bg-white p-7 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                    <div class="w-14 h-14 mb-4 rounded-lg overflow-hidden bg-gray-50 border border-gray-100">
+                        <img src="tidal-binary-icon.jpg" alt="Tidal response of compact objects" class="w-full h-full object-cover" loading="lazy">
+                    </div>
+                    <h4 class="text-xl font-serif font-semibold text-academic-navy mb-3">Tidal Response and Horizon Diagnostics</h4>
+                    <p class="text-gray-600 leading-relaxed text-sm">
+                        I study tidal Love numbers of compact objects in matter-rich environments. My work finds that the logarithmic dependence of scalar and spin-1 tidal response on compactness can survive the presence of a self-gravitating relativistic thin disc.
+                    </p>
+                </article>
+
+                <article class="bg-white p-7 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                    <div class="w-14 h-14 mb-4 rounded-lg overflow-hidden bg-gray-50 border border-gray-100">
+                        <img src="einstein-gravity-icon.jpg" alt="Relativistic gravity" class="w-full h-full object-cover" loading="lazy">
+                    </div>
+                    <h4 class="text-xl font-serif font-semibold text-academic-navy mb-3">Modified Gravity and Compact Objects</h4>
+                    <p class="text-gray-600 leading-relaxed text-sm">
+                        I examine perturbations and radiation in theories beyond Einstein gravity, including quadratic and Lovelock gravity. This work clarifies when the eikonal quasinormal-mode/light-ring correspondence fails and how scalar hair changes ringdown, stability and Hawking emission.
+                    </p>
+                </article>
+            </div>
+
+            <div class="mt-8">
+                <a href="research.html" class="inline-flex items-center gap-2 px-5 py-3 bg-academic-navy text-white rounded-sm font-medium hover:bg-academic-blue transition-colors">
+                    Explore Research Contributions <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- Experience & Education Section -->
+        <section id="experience" class="scroll-mt-24">
+            <h3 class="text-3xl font-serif font-bold text-academic-navy section-heading">Experience & Education</h3>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 mt-6">
+                
+                <!-- Experience Timeline -->
+                <div>
+                    <h4 class="text-2xl font-serif font-semibold text-gray-800 mb-8 flex items-center">
+                        <i class="fas fa-briefcase text-academic-blue mr-3 opacity-80"></i>Academic Appointments
+                    </h4>
+                    <div class="relative border-l-2 border-gray-200 ml-3 space-y-10">
+                        <div class="relative pl-8">
+                            <span class="absolute -left-[9px] top-1 h-4 w-4 rounded-full bg-academic-blue ring-4 ring-white"></span>
+                            <h5 class="text-lg font-bold text-academic-navy">Postdoctoral Fellow</h5>
+                            <p class="text-academic-blue font-medium text-sm mb-2">Indian Institute of Astrophysics, Bengaluru</p>
+                            <span class="inline-block text-xs font-semibold text-academic-navy bg-blue-50 px-3 py-1 rounded-full border border-blue-100 mb-2">2026 – Present</span>
+                        </div>
+                        <div class="relative pl-8">
+                            <span class="absolute -left-[9px] top-1 h-4 w-4 rounded-full bg-gray-300 ring-4 ring-white"></span>
+                            <h5 class="text-lg font-bold text-gray-800">National Postdoctoral Fellow</h5>
+                            <p class="text-gray-600 font-medium text-sm mb-2">Indian Institute of Technology Guwahati</p>
+                            <span class="inline-block text-xs font-semibold text-gray-500 bg-gray-50 px-3 py-1 rounded-full border border-gray-200">2024 – 2026</span>
+                        </div>
+                        <div class="relative pl-8">
+                            <span class="absolute -left-[9px] top-1 h-4 w-4 rounded-full bg-gray-300 ring-4 ring-white"></span>
+                            <h5 class="text-lg font-bold text-gray-800">Postdoctoral Fellow</h5>
+                            <p class="text-gray-600 font-medium text-sm mb-2">Indian Association for the Cultivation of Science, Kolkata</p>
+                            <span class="inline-block text-xs font-semibold text-gray-500 bg-gray-50 px-3 py-1 rounded-full border border-gray-200">2023 – 2024</span>
+                        </div>
+                        <div class="relative pl-8">
+                            <span class="absolute -left-[9px] top-1 h-4 w-4 rounded-full bg-gray-300 ring-4 ring-white"></span>
+                            <h5 class="text-lg font-bold text-gray-800">Postdoctoral Fellow</h5>
+                            <p class="text-gray-600 font-medium text-sm mb-2">Indian Institute of Technology Bombay</p>
+                            <span class="inline-block text-xs font-semibold text-gray-500 bg-gray-50 px-3 py-1 rounded-full border border-gray-200">2021 – 2023</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education Timeline -->
+                <div>
+                    <h4 class="text-2xl font-serif font-semibold text-gray-800 mb-8 flex items-center">
+                        <i class="fas fa-graduation-cap text-academic-blue mr-3 opacity-80"></i>Education
+                    </h4>
+                    <div class="relative border-l-2 border-gray-200 ml-3 space-y-10">
+                        <div class="relative pl-8">
+                            <span class="absolute -left-[9px] top-1 h-4 w-4 rounded-full bg-academic-blue ring-4 ring-white"></span>
+                            <h5 class="text-lg font-bold text-academic-navy">Ph.D. in Physics</h5>
+                            <p class="text-gray-700 font-medium text-sm mb-2">IISER Kolkata</p>
+                            <span class="inline-block text-xs font-semibold text-academic-navy bg-blue-50 px-3 py-1 rounded-full border border-blue-100 mb-3">2015 – 2021</span>
+                            <p class="text-sm text-gray-600 italic bg-gray-50 p-3 rounded border border-gray-100 leading-relaxed">Thesis: "On the effect of scalar fields on Hawking radiation and quasinormal modes of black holes."<br>Advisor: Prof. Narayan Banerjee</p>
+                        </div>
+                        <div class="relative pl-8">
+                            <span class="absolute -left-[9px] top-1 h-4 w-4 rounded-full bg-gray-300 ring-4 ring-white"></span>
+                            <h5 class="text-lg font-bold text-gray-800">M.Sc. in Physics</h5>
+                            <p class="text-gray-600 font-medium text-sm mb-2">IISER Kolkata</p>
+                            <span class="inline-block text-xs font-semibold text-gray-500 bg-gray-50 px-3 py-1 rounded-full border border-gray-200">2013 – 2015</span>
+                        </div>
+                        <div class="relative pl-8">
+                            <span class="absolute -left-[9px] top-1 h-4 w-4 rounded-full bg-gray-300 ring-4 ring-white"></span>
+                            <h5 class="text-lg font-bold text-gray-800">B.Sc. (Hons.) in Physics</h5>
+                            <p class="text-gray-600 font-medium text-sm mb-2">Asutosh College, University of Calcutta</p>
+                            <span class="inline-block text-xs font-semibold text-gray-500 bg-gray-50 px-3 py-1 rounded-full border border-gray-200">2010 – 2013</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Teaching Section -->
+        <section id="teaching" class="scroll-mt-24">
+            <h3 class="text-3xl font-serif font-bold text-academic-navy section-heading">Teaching & Instruction</h3>
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden mt-6">
+                <div class="p-8 space-y-8">
+                    <div class="border-l-4 border-academic-blue pl-5">
+                        <h5 class="text-lg font-bold text-gray-900">Instructor, IUCAA Pune</h5>
+                        <p class="text-sm text-academic-blue font-medium mb-2">"Black Hole Perturbation Theory" (Oct 2026)</p>
+                        <p class="text-sm text-gray-600 leading-relaxed">Delivered lectures at "Advanced Topics in General Relativity for Multimessenger Observations," designed for Ph.D. students, postdoctoral researchers, and faculty members.</p>
+                    </div>
+                    <div class="border-l-4 border-gray-300 pl-5 hover:border-gray-400 transition-colors">
+                        <h5 class="text-lg font-bold text-gray-900">Teaching Assistant, ICTS Bengaluru</h5>
+                        <p class="text-sm text-gray-700 font-medium mb-2">"Beyond the Horizon" & "Black Holes in General Relativity"</p>
+                        <p class="text-sm text-gray-600 leading-relaxed">Assisted in advanced schools for graduate students and postdoctoral researchers led by Prof. Dimitrios Psaltis (Mar 2025) and Prof. Thomas Sotiriou (Oct 2023).</p>
+                    </div>
+                    <div class="border-l-4 border-gray-300 pl-5 hover:border-gray-400 transition-colors">
+                        <h5 class="text-lg font-bold text-gray-900">Teaching Assistant, IIT Bombay</h5>
+                        <p class="text-sm text-gray-600 leading-relaxed">UG First Year Physics Lab (PH117) and Basics of Electricity and Magnetism (PH108).</p>
+                    </div>
+                    <div class="border-l-4 border-gray-300 pl-5 hover:border-gray-400 transition-colors">
+                        <h5 class="text-lg font-bold text-gray-900">Teaching Assistant, IISER Kolkata</h5>
+                        <p class="text-sm text-gray-600 leading-relaxed">Assisted with Basic Statistical Mechanics, Basics of Field Theory and Relativistic Quantum Mechanics, Physics IV, Intermediate Electricity and Magnetism, and Intermediate Quantum Mechanics.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Publications Section -->
+        <!-- Selected Highlights Section -->
+        <section id="achievements" class="scroll-mt-24">
+            <h3 class="text-3xl font-serif font-bold text-academic-navy section-heading">Selected Highlights</h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+                <div class="bg-white rounded-xl border border-gray-100 p-6">
+                    <div class="w-10 h-10 rounded-lg bg-blue-50 text-academic-blue flex items-center justify-center mb-4">
+                        <i class="fas fa-award text-lg"></i>
+                    </div>
+                    <h4 class="font-serif text-lg font-semibold text-academic-navy mb-2">National Postdoctoral Fellowship</h4>
+                    <p class="text-sm text-gray-600">ANRF National Postdoctoral Fellowship, Government of India (2024–2026).</p>
+                </div>
+
+                <div class="bg-white rounded-xl border border-gray-100 p-6">
+                    <div class="w-10 h-10 rounded-lg bg-blue-50 text-academic-blue flex items-center justify-center mb-4">
+                        <i class="fas fa-plane-departure text-lg"></i>
+                    </div>
+                    <h4 class="font-serif text-lg font-semibold text-academic-navy mb-2">International Travel Support</h4>
+                    <p class="text-sm text-gray-600">ANRF/DST support to attend GR24 and Amaldi16 (2025).</p>
+                </div>
+
+                <div class="bg-white rounded-xl border border-gray-100 p-6">
+                    <div class="w-10 h-10 rounded-lg bg-blue-50 text-academic-blue flex items-center justify-center mb-4">
+                        <i class="fas fa-file-signature text-lg"></i>
+                    </div>
+                    <h4 class="font-serif text-lg font-semibold text-academic-navy mb-2">Journal Reviewer</h4>
+                    <p class="text-sm text-gray-600">Reviewer for international scientific journals since 2022, including <em>Physical Review Letters</em>, <em>Physical Review D</em>, <em>European Physical Journal C</em>, and <em>General Relativity and Gravitation</em>.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="publications" class="scroll-mt-24">
+            <h3 class="text-3xl font-serif font-bold text-academic-navy section-heading">Publications</h3>
+            <p class="text-sm text-gray-600 mt-2 mb-8">Journal articles, preprints, and conference proceedings. Publication titles link to INSPIRE-HEP search results.</p>
+
+            <div class="space-y-10 mt-6">
+                <div>
+                    <h4 class="text-xl font-serif font-semibold text-academic-navy mb-4">Journal Articles</h4>
+                    <ol class="list-decimal list-outside ml-6 space-y-5 text-gray-800 text-sm md:text-base marker:text-gray-400 marker:font-medium">
+                        <li class="pl-2 leading-relaxed">
+        A. Bhowmik, A. Chowdhury and S. Chakrabarti,<br>
+        <a href="https://inspirehep.net/literature?q=%22The%20Ringdown%20and%20the%20Tide%3A%20Fingerprints%20of%20Dark%20Matter%20Halo%20Profiles%22" target="_blank" rel="noopener noreferrer" class="italic text-gray-800 hover:text-academic-blue underline decoration-gray-300 hover:decoration-academic-blue">The Ringdown and the Tide: Fingerprints of Dark Matter Halo Profiles</a>,<br>
+        <span class="text-academic-blue font-medium">Phys. Rev. D 114, 084070 (2026). arXiv:2608.07678</span>
+    </li>
+<li class="pl-2 leading-relaxed">
+        A. Chowdhury, G. Sen, S. Chakrabarti and S. Das,<br>
+        <a href="https://inspirehep.net/literature?q=%22Effect%20of%20generic%20dark%20matter%20halo%20on%20transonic%20accretion%20onto%20galactic%20black%20holes%22" target="_blank" rel="noopener noreferrer" class="italic text-gray-800 hover:text-academic-blue underline decoration-gray-300 hover:decoration-academic-blue">Effect of generic dark matter halo on transonic accretion onto galactic black holes</a>,<br>
+        <span class="text-academic-blue font-medium">Phys. Rev. D 112, 064041 (2025)</span>
+    </li>
+<li class="pl-2 leading-relaxed">
+        R. Ghosh, A. K. Mishra and A. Chowdhury,<br>
+        <a href="https://inspirehep.net/literature?q=%22Birkhoff%E2%80%99s%20Theorem%20and%20Uniqueness%3A%20A%20Peek%20beyond%20General%20Relativity%22" target="_blank" rel="noopener noreferrer" class="italic text-gray-800 hover:text-academic-blue underline decoration-gray-300 hover:decoration-academic-blue">Birkhoff’s Theorem and Uniqueness: A Peek beyond General Relativity</a>,<br>
+        <span class="text-academic-blue font-medium">Phys. Lett. B 871, 139974 (2025). arXiv:2411.09193</span>
+    </li>
+<li class="pl-2 leading-relaxed">
+        A. Chowdhury, A. K. Mishra and S. Chakraborty,<br>
+        <a href="https://inspirehep.net/literature?q=%22Connecting%20quasi-normal%20modes%20with%20causality%20in%20Lovelock%20theories%20of%20gravity%22" target="_blank" rel="noopener noreferrer" class="italic text-gray-800 hover:text-academic-blue underline decoration-gray-300 hover:decoration-academic-blue">Connecting quasi-normal modes with causality in Lovelock theories of gravity</a>,<br>
+        <span class="text-academic-blue font-medium">Phys. Lett. B 861, 139219 (2025)</span>
+    </li>
+<li class="pl-2 leading-relaxed">
+        A. Chowdhury, S. Biswas and S. Chakraborty,<br>
+        <a href="https://inspirehep.net/literature?q=%22Accreting%20Schwarzschild-like%20compact%20object%3A%20Plasma-photon%20interaction%20and%20stability%22" target="_blank" rel="noopener noreferrer" class="italic text-gray-800 hover:text-academic-blue underline decoration-gray-300 hover:decoration-academic-blue">Accreting Schwarzschild-like compact object: Plasma-photon interaction and stability</a>,<br>
+        <span class="text-academic-blue font-medium">Phys. Rev. D 110, 064072 (2024)</span>
+    </li>
+<li class="pl-2 leading-relaxed">
+        A. Chowdhury, S. Xavier and S. Shankaranarayanan,<br>
+        <a href="https://inspirehep.net/literature?q=%22The%20dominating%20mode%20of%20two%20competing%20massive%20modes%20of%20quadratic%20gravity%22" target="_blank" rel="noopener noreferrer" class="italic text-gray-800 hover:text-academic-blue underline decoration-gray-300 hover:decoration-academic-blue">The dominating mode of two competing massive modes of quadratic gravity</a>,<br>
+        <span class="text-academic-blue font-medium">Scientific Reports 13, 8547 (2023)</span>
+    </li>
+<li class="pl-2 leading-relaxed">
+        A. Chowdhury, S. Devi and S. Chakrabarti,<br>
+        <a href="https://inspirehep.net/literature?q=%22Naked%20singularity%20in%204D%20Einstein-Gauss-Bonnet%20novel%20gravity%3A%20Echoes%20and%20instability%22" target="_blank" rel="noopener noreferrer" class="italic text-gray-800 hover:text-academic-blue underline decoration-gray-300 hover:decoration-academic-blue">Naked singularity in 4D Einstein-Gauss-Bonnet novel gravity: Echoes and instability</a>,<br>
+        <span class="text-academic-blue font-medium">Phys. Rev. D 106, 024023 (2022)</span>
+    </li>
+<li class="pl-2 leading-relaxed">
+        A. Chowdhury and N. Banerjee,<br>
+        <a href="https://inspirehep.net/literature?q=%22Echoes%20from%20a%20singularity%22" target="_blank" rel="noopener noreferrer" class="italic text-gray-800 hover:text-academic-blue underline decoration-gray-300 hover:decoration-academic-blue">Echoes from a singularity</a>,<br>
+        <span class="text-academic-blue font-medium">Phys. Rev. D 102, 124051 (2020). arXiv:2006.16522</span>
+    </li>
+<li class="pl-2 leading-relaxed">
+        A. Chowdhury and N. Banerjee,<br>
+        <a href="https://inspirehep.net/literature?q=%22Greybody%20factor%20and%20sparsity%20of%20Hawking%20radiation%20from%20a%20charged%20spherical%20black%20hole%20with%20scalar%20hair%22" target="_blank" rel="noopener noreferrer" class="italic text-gray-800 hover:text-academic-blue underline decoration-gray-300 hover:decoration-academic-blue">Greybody factor and sparsity of Hawking radiation from a charged spherical black hole with scalar hair</a>,<br>
+        <span class="text-academic-blue font-medium">Phys. Lett. B 805, 135417 (2020)</span>
+    </li>
+<li class="pl-2 leading-relaxed">
+        A. Chowdhury,<br>
+        <a href="https://inspirehep.net/literature?q=%22Hawking%20emission%20of%20charged%20particles%20from%20an%20electrically%20charged%20spherical%20black%20hole%20with%20scalar%20hair%22" target="_blank" rel="noopener noreferrer" class="italic text-gray-800 hover:text-academic-blue underline decoration-gray-300 hover:decoration-academic-blue">Hawking emission of charged particles from an electrically charged spherical black hole with scalar hair</a>,<br>
+        <span class="text-academic-blue font-medium">Eur. Phys. J. C 79, 928 (2019)</span>
+    </li>
+<li class="pl-2 leading-relaxed">
+        A. Chowdhury and N. Banerjee,<br>
+        <a href="https://inspirehep.net/literature?q=%22Superradiant%20stability%20of%20mutated%20Reissner%E2%80%93Nordstr%C3%B6m%20black%20holes%22" target="_blank" rel="noopener noreferrer" class="italic text-gray-800 hover:text-academic-blue underline decoration-gray-300 hover:decoration-academic-blue">Superradiant stability of mutated Reissner–Nordström black holes</a>,<br>
+        <span class="text-academic-blue font-medium">Gen. Relativ. Gravit. 51, 99 (2019)</span>
+    </li>
+<li class="pl-2 leading-relaxed">
+        A. Chowdhury and N. Banerjee,<br>
+        <a href="https://inspirehep.net/literature?q=%22Quasinormal%20modes%20of%20a%20charged%20spherical%20black%20hole%20with%20scalar%20hair%20for%20scalar%20and%20Dirac%20perturbations%22" target="_blank" rel="noopener noreferrer" class="italic text-gray-800 hover:text-academic-blue underline decoration-gray-300 hover:decoration-academic-blue">Quasinormal modes of a charged spherical black hole with scalar hair for scalar and Dirac perturbations</a>,<br>
+        <span class="text-academic-blue font-medium">Eur. Phys. J. C 78, 594 (2018)</span>
+    </li>
+                    </ol>
+                </div>
+                <div>
+                    <h4 class="text-xl font-serif font-semibold text-academic-navy mb-4">Preprints</h4>
+                    <ol class="list-decimal list-outside ml-6 space-y-5 text-gray-800 text-sm md:text-base marker:text-gray-400 marker:font-medium">
+                        <li class="pl-2 leading-relaxed">
+        R. Ghosh, N. Speeney, A. Chowdhury, C. Singha, M. A. S. Pinto and E. Berti,<br>
+        <a href="https://inspirehep.net/literature?q=%22From%20Density%20to%20Mass%3A%20A%20New%20Parametrized%20Framework%20for%20Dark%20Matter%20Environment%20Around%20Black%20Holes%22" target="_blank" rel="noopener noreferrer" class="italic text-gray-800 hover:text-academic-blue underline decoration-gray-300 hover:decoration-academic-blue">From Density to Mass: A New Parametrized Framework for Dark Matter Environment Around Black Holes</a>,<br>
+        <span class="text-academic-blue font-medium">arXiv:2609.35771 [gr-qc]</span>
+    </li>
+<li class="pl-2 leading-relaxed">
+        A. Chowdhury, C. Singha, K. Bamba and S. Chakraborty,<br>
+        <a href="https://inspirehep.net/literature?q=%22Tidal%20deformation%20of%20an%20accreting%20compact%20object%22" target="_blank" rel="noopener noreferrer" class="italic text-gray-800 hover:text-academic-blue underline decoration-gray-300 hover:decoration-academic-blue">Tidal deformation of an accreting compact object</a>,<br>
+        <span class="text-academic-blue font-medium">arXiv:2607.24938 [gr-qc]</span>
+    </li>
+                    </ol>
+                </div>
+                <div>
+                    <h4 class="text-xl font-serif font-semibold text-academic-navy mb-4">Conference Proceedings</h4>
+                    <ol class="list-decimal list-outside ml-6 space-y-5 text-gray-800 text-sm md:text-base marker:text-gray-400 marker:font-medium">
+                        <li class="pl-2 leading-relaxed">
+        A. Chowdhury et al.,<br>
+        <a href="https://inspirehep.net/literature?q=%22Dark%20matter%20halos%20and%20transonic%20accretion%20flow%22" target="_blank" rel="noopener noreferrer" class="italic text-gray-800 hover:text-academic-blue underline decoration-gray-300 hover:decoration-academic-blue">Dark matter halos and transonic accretion flow</a>,<br>
+        <span class="text-academic-blue font-medium">Accepted for publication in Journal of Physics: Conference Series; proceedings of GR24 and Amaldi16, J. Phys. Conf. Ser. 3177 (2026), 012038</span>
+    </li>
+                    </ol>
+                </div>
+                <p class="text-sm text-gray-500">For the live bibliographic record, see <a href="https://inspirehep.net/authors/1826966?ui-citation-summary=true" target="_blank" rel="noopener noreferrer" class="text-academic-blue underline">Avijit Chowdhury on INSPIRE-HEP</a>.</p>
+            </div>
+        </section>
+
+        <!-- CV Call to Action Section -->
+        <section id="cv" class="scroll-mt-24 pb-16">
+            <div class="bg-white rounded-2xl border border-gray-200 shadow-sm p-5 md:p-8 mb-8">
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-5">
+                    <div>
+                        <h3 class="text-2xl font-serif font-bold text-academic-navy">CV Preview</h3>
+                        <p class="text-sm text-gray-600 mt-1">Browse the PDF here, or open it in a new tab.</p>
+                    </div>
+                    <div class="flex flex-wrap items-center gap-3">
+                        <a href="CV.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-4 py-2 border border-gray-300 text-academic-navy font-medium rounded-lg hover:bg-gray-50 transition-colors">
+                            <i class="fas fa-up-right-from-square mr-2"></i> Open PDF
+                        </a>
+                        <a href="CV.pdf" download class="inline-flex items-center justify-center px-4 py-2 bg-academic-navy text-white font-medium rounded-lg hover:opacity-90 transition-colors">
+                            <i class="fas fa-download mr-2"></i> Download CV
+                        </a>
+                    </div>
+                </div>
+                <div class="w-full overflow-hidden rounded-lg border border-gray-200 bg-gray-100">
+                    <iframe src="CV.pdf#view=FitH" title="Curriculum Vitae PDF preview" class="w-full h-[600px] md:h-[850px]" loading="lazy">
+                        Your browser does not support embedded PDF previews.
+                        <a href="CV.pdf">Open the CV PDF</a>.
+                    </iframe>
+                </div>
+                <p class="text-xs text-gray-500 mt-3">If the preview does not load in your browser, use “Open PDF” or the download button below.</p>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer / Contact -->
+    <footer class="bg-white border-t border-gray-200 pt-12 pb-8">
+        <div class="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6 mb-8">
+                <div class="text-center md:text-left">
+                    <h2 class="font-serif font-bold text-xl text-academic-navy">Avijit Chowdhury</h2>
+                </div>
+                
+                <!-- Social / Academic Links -->
+                <div class="flex space-x-6">
+                    <a href="mailto:chowdhury.avijit.001@gmail.com" class="text-gray-400 hover:text-academic-blue transition-colors duration-200 transform hover:scale-110" title="Email">
+                        <i class="fas fa-envelope text-xl"></i>
+                    </a>
+                    <a href="https://scholar.google.com/citations?user=su9H5YQAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-academic-blue transition-colors duration-200 transform hover:scale-110" title="Google Scholar">
+                        <i class="fas fa-graduation-cap text-xl"></i>
+                    </a>
+                    <a href="https://orcid.org/0000-0002-7235-5076" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#A6CE39] transition-colors duration-200 transform hover:scale-110" title="ORCID">
+                        <i class="fab fa-orcid text-xl"></i>
+                    </a>
+                    <a href="https://inspirehep.net/authors/1826966?ui-citation-summary=true" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-academic-blue transition-colors duration-200 transform hover:scale-110" title="INSPIRE-HEP">
+                        <i class="fas fa-atom text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="text-center text-sm text-gray-400 border-t border-gray-100 pt-8">
+                <p>&copy; <span id="year"></span> Avijit Chowdhury. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Set current year dynamically
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile menu toggle logic
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on clicking a link
+        const mobileLinks = menu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
