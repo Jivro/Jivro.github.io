@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Contributions | Avijit Chowdhury</title>
+    <meta name="theme-color" content="#0a0f1d">
+    <meta name="description" content="Selected research contributions by Avijit Chowdhury in black hole ringdown, dark matter environments, accretion, tidal response and modified gravity.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = { theme: { extend: {
+            fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Merriweather', 'serif'] },
+            colors: { academic: { navy: '#0a0f1d', blue: '#1e3a8a', light: '#f8fafc', slate: '#334155' } }
+        }}};
+    </script>
+    <style>
+        body { background-color: #fcfcfc; }
+        .hero-bg { background-image: linear-gradient(to right, rgba(10,15,29,.96), rgba(10,15,29,.78)), url('https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=2000&q=80'); background-size: cover; background-position: center; }
+        .section-heading { position: relative; display: inline-block; padding-bottom: .5rem; margin-bottom: 1.25rem; }
+        .section-heading::after { content: ''; position: absolute; left: 0; bottom: 0; width: 60px; height: 3px; background: #1e3a8a; }
+    </style>
+</head>
+<body class="font-sans text-academic-slate antialiased">
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-gray-200 shadow-sm">
+        <div class="max-w-6xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between">
+            <a href="index.html#about" class="font-serif font-bold text-lg sm:text-xl text-academic-navy">Avijit Chowdhury</a>
+            <div class="flex items-center gap-4 sm:gap-7 text-sm font-medium">
+                <a href="index.html#about" class="text-gray-700 hover:text-academic-blue">Home</a>
+                <a href="index.html#research" class="text-gray-700 hover:text-academic-blue">Research Interests</a>
+                <a href="index.html#publications" class="text-gray-700 hover:text-academic-blue">Publications</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-bg text-white py-16 sm:py-20">
+        <div class="max-w-5xl mx-auto px-6 sm:px-8">
+            <p class="uppercase tracking-[0.18em] text-blue-200 text-xs sm:text-sm mb-4">Selected Research Contributions</p>
+            <h1 class="font-serif text-3xl sm:text-5xl font-bold leading-tight max-w-4xl">Black Hole Physics, Gravitational Waves, and Astrophysical Environments</h1>
+            <p class="mt-6 text-gray-200 leading-relaxed text-base sm:text-lg max-w-3xl">
+                My research combines black hole perturbation theory, relativistic accretion and compact-object physics. I investigate how matter around compact objects affects their dynamics and observable signals, and how these effects can be distinguished from departures from General Relativity.
+            </p>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 sm:px-8 py-14 sm:py-16 space-y-14">
+        <section>
+            <h2 class="text-2xl sm:text-3xl font-serif font-bold text-academic-navy section-heading">1. Dark Matter Imprints on Black Hole Ringdown</h2>
+            <p class="text-gray-700 leading-relaxed mb-5">
+                I modelled a dark matter halo as an anisotropic Einstein cluster with a generalised (α, β, γ) density profile, derived the axial perturbation equation, and calculated quasinormal modes using sixth-order WKB and direct time-domain evolution.
+            </p>
+            <div class="grid md:grid-cols-2 gap-5">
+                <div class="bg-white rounded-xl border border-gray-200 p-6">
+                    <h3 class="font-semibold text-academic-navy mb-2"><i class="fas fa-wave-square text-academic-blue mr-2"></i>Key result</h3>
+                    <p class="text-sm leading-relaxed text-gray-600">The halo redshifts both the oscillation frequency and damping rate. For centrally concentrated halos, the inner density slope is the dominant profile parameter; the outer parameters are subleading.</p>
+                </div>
+                <div class="bg-white rounded-xl border border-gray-200 p-6">
+                    <h3 class="font-semibold text-academic-navy mb-2"><i class="fas fa-lightbulb text-academic-blue mr-2"></i>Physical interpretation</h3>
+                    <p class="text-sm leading-relaxed text-gray-600">In the eikonal limit, the shift is captured by a redshift integral over halo mass outside the light ring, explaining the connection between quasinormal modes, light-ring frequency and Lyapunov exponent.</p>
+                </div>
+            </div>
+            <p class="text-gray-700 leading-relaxed mt-5">
+                Time-domain evolutions confirm the WKB spectrum, recover the late-time power-law decay and show that the intermediate tail is controlled by the outer density falloff.
+            </p>
+        </section>
+
+        <section>
+            <h2 class="text-2xl sm:text-3xl font-serif font-bold text-academic-navy section-heading">2. Breaking Degeneracies with Tidal Response</h2>
+            <p class="text-gray-700 leading-relaxed mb-5">
+                Different halo compactnesses and density profiles can produce nearly indistinguishable ringdown spectra. A ringdown measurement alone may therefore be insufficient to infer the surrounding matter distribution.
+            </p>
+            <div class="border-l-4 border-academic-blue bg-blue-50/70 p-5 sm:p-6 rounded-r-lg">
+                <h3 class="font-semibold text-academic-navy mb-2">Main result</h3>
+                <p class="text-gray-700 leading-relaxed">The static axial tidal Love number samples the halo with a different radial weighting from ringdown. Combining tidal response and quasinormal modes can separate configurations that either observable leaves degenerate, offering a way to distinguish environmental effects from departures of the vacuum geometry.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="text-2xl sm:text-3xl font-serif font-bold text-academic-navy section-heading">3. Accretion as an Electromagnetic Probe of Dark Matter</h2>
+            <p class="text-gray-700 leading-relaxed mb-5">
+                I studied relativistic, low-angular-momentum, inviscid advective accretion onto a supermassive black hole embedded in a cold dark matter halo.
+            </p>
+            <ul class="space-y-3 text-gray-700 leading-relaxed">
+                <li class="flex gap-3"><i class="fas fa-check text-academic-blue mt-1"></i><span>The halo changes the critical-point structure and topology of the transonic flow.</span></li>
+                <li class="flex gap-3"><i class="fas fa-check text-academic-blue mt-1"></i><span>It enhances disc luminosity by an amount determined by halo mass and compactness.</span></li>
+                <li class="flex gap-3"><i class="fas fa-check text-academic-blue mt-1"></i><span>For compact and massive halos, the inner flow dominates the luminosity contribution, making emission a potential probe of the central dark matter spike.</span></li>
+            </ul>
+            <p class="text-gray-700 leading-relaxed mt-5">This provides an electromagnetic complement to the gravitational-wave constraints from ringdown and tidal response.</p>
+        </section>
+
+        <section>
+            <h2 class="text-2xl sm:text-3xl font-serif font-bold text-academic-navy section-heading">4. Radiation Transport and Horizonless Compact Objects</h2>
+            <p class="text-gray-700 leading-relaxed mb-5">
+                I derived the dynamics of electromagnetic fields in cold accreting plasma around static, spherically symmetric horizonless compact objects.
+            </p>
+            <div class="grid md:grid-cols-2 gap-5">
+                <div class="bg-white rounded-xl border border-gray-200 p-6">
+                    <h3 class="font-semibold text-academic-navy mb-2">Plasma quasibound states</h3>
+                    <p class="text-sm leading-relaxed text-gray-600">The complex frequencies oscillate with plasma frequency. Their oscillation amplitude is set by surface reflectivity, while the oscillation length scale depends on compactness. The plasma can therefore carry information about the object's surface.</p>
+                </div>
+                <div class="bg-white rounded-xl border border-gray-200 p-6">
+                    <h3 class="font-semibold text-academic-navy mb-2">Tidal response in a disc</h3>
+                    <p class="text-sm leading-relaxed text-gray-600">The logarithmic dependence of scalar and spin-1 tidal response on compactness, arising from near-horizon physics, persists when the object is embedded in a self-gravitating relativistic thin disc.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="text-2xl sm:text-3xl font-serif font-bold text-academic-navy section-heading">5. Testing Gravity Beyond Einstein's Theory</h2>
+            <div class="space-y-5">
+                <article class="bg-white rounded-xl border border-gray-200 p-6">
+                    <h3 class="font-semibold text-academic-navy mb-2">Quadratic gravity</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">I showed that the massive spin-2 mode carries more gravitational-wave energy than the massive spin-0 mode and quantified the backreaction of the emitted radiation on the horizon, with implications for detectability by LISA.</p>
+                </article>
+                <article class="bg-white rounded-xl border border-gray-200 p-6">
+                    <h3 class="font-semibold text-academic-navy mb-2">Lovelock gravity</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">I demonstrated that the eikonal correspondence between quasinormal modes and unstable null circular geodesics can fail generically. Relating the spectrum to the causal structure of the field equations through polarisation-dependent effective metrics restores the appropriate interpretation.</p>
+                </article>
+                <article class="bg-white rounded-xl border border-gray-200 p-6">
+                    <h3 class="font-semibold text-academic-navy mb-2">Scalar hair and exotic compact objects</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">My earlier work showed that scalar hair modifies quasinormal spectra and superradiant stability, and changes Hawking emission, greybody factors and emission sparsity. I also established axial stability and distinctive ringdown echoes for the Janis–Newman–Winicour spacetime, while finding the studied four-dimensional Einstein–Gauss–Bonnet configuration to be unstable.</p>
+                </article>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="text-2xl sm:text-3xl font-serif font-bold text-academic-navy section-heading">6. Connecting the Messengers</h2>
+            <p class="text-gray-700 leading-relaxed">
+                These results motivate a unified approach in which gravitational-wave ringdown, tidal response and electromagnetic emission constrain the same environmental model. Each observable samples the surrounding matter differently. Used together, they can help separate the properties of the central compact object from the influence of its dark matter halo, accretion flow and plasma.
+            </p>
+        </section>
+
+        <section class="bg-academic-navy text-white rounded-2xl p-7 sm:p-9">
+            <h2 class="font-serif text-2xl font-bold mb-3">Current Directions</h2>
+            <p class="text-gray-200 leading-relaxed">
+                My next steps are to extend ringdown and tidal calculations to rotating backgrounds, investigate environmental effects on inspiral signals, and develop more realistic accretion models that include viscosity and magnetic fields. I also aim to investigate nonlinear effects in compact-object perturbations and the coupled dynamics of compact objects and their surrounding matter, going beyond the linear regime where appropriate. A long-term goal is to connect these analytical and computational studies with future gravitational-wave observations, including LISA.
+            </p>
+            <div class="mt-6 flex flex-wrap gap-3">
+                <a href="index.html#publications" class="inline-flex items-center gap-2 px-5 py-3 bg-white text-academic-navy font-medium rounded-sm hover:bg-gray-100">View Publications <i class="fas fa-arrow-right"></i></a>
+                <a href="index.html#research" class="inline-flex items-center gap-2 px-5 py-3 border border-white/40 text-white font-medium rounded-sm hover:bg-white/10">Back to Research Interests</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-gray-200 bg-white">
+        <div class="max-w-5xl mx-auto px-6 sm:px-8 py-7 flex flex-col sm:flex-row gap-3 justify-between text-sm text-gray-500">
+            <span>© <span id="year"></span> Avijit Chowdhury. All rights reserved.</span>
+            <a href="index.html#about" class="hover:text-academic-blue">Home</a>
+        </div>
+    </footer>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
